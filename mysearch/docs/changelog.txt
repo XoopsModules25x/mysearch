@@ -1,0 +1,22 @@
+<b><u>=> Version 1.20 Final (2012-05-28)</u></b>
+Fixed issue with CSS border (mamba)
+
+<b><u>=> Version 1.20 RC (2012-03-27)</u></b>
+Converted to XOOPS 2.5.x GUI (mamba)
+
+<b><u>=> Version 1.1 Final (2008-11-01)</u></b> (Trabis)
+- added: 2.2.x compatibility
+- fixed: ajax block not working well when in the search page
+- fixed:
+
+
+<b><u>=> Version 1.0 Final (2008-05-10)</u></b>
+- added: imported module isearch 1.6 from instantzero
+- added: ajax block and search page.
+
+
+
+
+
+
+

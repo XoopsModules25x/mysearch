@@ -1,0 +1,6 @@
+Credits
+===============
+
+Originally developed by Herve Thouzard (hervet), with credits to Christian, Marco, Lankford, Smart2, Trabis
+
+Updated to XOOPS 2.5.0 Standard GUI by Michael Beck (Mamba)
