@@ -51,9 +51,10 @@ class searches extends XoopsObject
         }
 
         if(is_array($tblusers) && array_key_exists($uid,$tblusers)) {
-            return 	$tblusers[$uid];
+            return    $tblusers[$uid];
         }
         $tblusers[$uid]=XoopsUser::getUnameFromId($uid);
+
         return $tblusers[$uid];
     }
 
@@ -64,15 +65,16 @@ class searches extends XoopsObject
  */
 class MysearchSearchesHandler extends XoopsObjectHandler
 {
-    function &create($isNew = true)	{
+    function &create($isNew = true)    {
         $searches = new searches();
         if ($isNew) {
             $searches->setNew();
         }
+
         return $searches;
     }
 
-    function &get($id)	{
+    function &get($id)    {
         $sql = 'SELECT * FROM '.$this->db->prefix('mysearch_searches').' WHERE mysearchid='.intval($id);
         if (!$result = $this->db->query($sql)) {
             return false;
@@ -81,11 +83,12 @@ class MysearchSearchesHandler extends XoopsObjectHandler
         if ($numrows == 1) {
             $searches = new searches();
             $searches->assignVars($this->db->fetchArray($result));
+
             return $searches;
         }
+
         return false;
     }
-
 
     function insert(&$searches, $force = false) {
         if (get_class($searches) != 'searches') {
@@ -98,6 +101,7 @@ class MysearchSearchesHandler extends XoopsObjectHandler
             foreach($searches->getErrors() as $oneerror) {
                 echo "<br><h2>".$oneerror."</h2>";
             }
+
             return false;
         }
         foreach ($searches->cleanVars as $k => $v) {
@@ -148,9 +152,9 @@ class MysearchSearchesHandler extends XoopsObjectHandler
             $mysearchid = $this->db->getInsertId();
         }
         $searches->assignVar('mysearchid', $mysearchid);
+
         return $mysearchid;
     }
-
 
     function delete(&$searches, $force = false)
     {
@@ -166,6 +170,7 @@ class MysearchSearchesHandler extends XoopsObjectHandler
         if (!$result) {
             return false;
         }
+
         return true;
     }
 
@@ -188,6 +193,7 @@ class MysearchSearchesHandler extends XoopsObjectHandler
         $sql= "SELECT count(distinct(date_format(datesearch,'%X-%m-%d'))) as cpt  FROM ".$this->db->prefix('mysearch_searches');
         $result = $this->db->query($sql);
         list($count) = $this->db->fetchRow($result);
+
         return $count;
     }
 
@@ -202,6 +208,7 @@ class MysearchSearchesHandler extends XoopsObjectHandler
         while ($myrow = $this->db->fetchArray($result)) {
             $ret[$myrow['shdate']]=$myrow['cpt'];
         }
+
         return $ret;
     }
 
@@ -213,6 +220,7 @@ class MysearchSearchesHandler extends XoopsObjectHandler
         $sql = "SELECT count(distinct(ip)) as cpt FROM ".$this->db->prefix('mysearch_searches');
         $result = $this->db->query($sql);
         $myrow = $this->db->fetchArray($result);
+
         return $myrow['cpt'];
     }
 
@@ -227,9 +235,9 @@ class MysearchSearchesHandler extends XoopsObjectHandler
         while ($myrow = $this->db->fetchArray($result)) {
             $ret[$myrow['ip']]=$myrow['cpt'];
         }
+
         return $ret;
     }
-
 
     /**
      * Get the unique number of people who used the search
@@ -239,6 +247,7 @@ class MysearchSearchesHandler extends XoopsObjectHandler
         $sql = "SELECT count(distinct(uid)) as cpt FROM ".$this->db->prefix('mysearch_searches');
         $result = $this->db->query($sql);
         $myrow = $this->db->fetchArray($result);
+
         return $myrow['cpt'];
     }
 
@@ -253,6 +262,7 @@ class MysearchSearchesHandler extends XoopsObjectHandler
         while ($myrow = $this->db->fetchArray($result)) {
             $ret[$myrow['uid']]=$myrow['cpt'];
         }
+
         return $ret;
     }
 
@@ -264,6 +274,7 @@ class MysearchSearchesHandler extends XoopsObjectHandler
         $sql = "SELECT Count(distinct(keyword)) AS cpt FROM ".$this->db->prefix('mysearch_searches');
         $result = $this->db->query($sql);
         $myrow = $this->db->fetchArray($result);
+
         return $myrow['cpt'];
 
     }
@@ -280,10 +291,9 @@ class MysearchSearchesHandler extends XoopsObjectHandler
         while ($myrow = $this->db->fetchArray($result)) {
             $ret[$myrow['mysearchid']] = array('keyword' => $ts->htmlSpecialChars($myrow['keyword']), 'count' => $myrow['cpt']);
         }
+
         return $ret;
     }
-
-
 
     /**
      * Hack by Smart Returns  keywords matches found for ajax autocompletion
@@ -297,14 +307,13 @@ class MysearchSearchesHandler extends XoopsObjectHandler
         while ($myrow = $this->db->fetchArray($result)) {
             $ret[] = array('keyword' => $ts->htmlSpecialChars($myrow['keyword']), 'count' => $myrow['cpt']);
         }
+
         return $ret;
     }
 
     /**
      * End hack by Smart
      */
-
-
 
     function &getObjects($criteria = null, $id_as_key = false)
     {
@@ -333,6 +342,7 @@ class MysearchSearchesHandler extends XoopsObjectHandler
             }
             unset($searches);
         }
+
         return $ret;
     }
 
@@ -347,6 +357,7 @@ class MysearchSearchesHandler extends XoopsObjectHandler
             return 0;
         }
         list($count) = $this->db->fetchRow($result);
+
         return $count;
     }
 
@@ -359,7 +370,7 @@ class MysearchSearchesHandler extends XoopsObjectHandler
         if (!$result = $this->db->queryF($sql)) {
             return false;
         }
+
         return true;
     }
 }
-?>

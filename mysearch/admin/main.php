@@ -32,7 +32,6 @@ include_once 'admin_header.php';
 $indexAdmin = new ModuleAdmin();
 global $pathIcons16;
 
-
 if (file_exists(XOOPS_ROOT_PATH.'/modules/mysearch/language/' . $xoopsConfig['language'] . '/main.php')) {
     include_once XOOPS_ROOT_PATH.'/modules/mysearch/language/' . $xoopsConfig['language'] . '/main.php';
 } else {
@@ -43,7 +42,6 @@ if (file_exists(XOOPS_ROOT_PATH.'/modules/mysearch/language/' . $xoopsConfig['la
  * Module's parameters
  */
 $keywords_count = mysearch_getmoduleoption('admincount');
-
 
 // **********************************************************************************************************************************************
 // **** Main
@@ -78,7 +76,6 @@ switch ($op) {
         $sform->addElement($button_tray);
         $sform->display();
         break;
-
 
         /**
          * Ask a confirmation before to remove keywords
@@ -118,7 +115,6 @@ switch ($op) {
         }
         break;
 
-
         /**
          * Effectively delete keywords
          */
@@ -149,7 +145,6 @@ switch ($op) {
         }
         break;
 
-
         /**
          * Remove a keyword from the database (directly called from the statistics part)
          */
@@ -165,7 +160,6 @@ switch ($op) {
         }
         redirect_header('index.php', 2, _AM_MYSEARCH_DBUPDATED);
         break;
-
 
         /**
          * Export datas to a pure text file
@@ -201,7 +195,6 @@ switch ($op) {
         $sform->addElement($button_tray);
         $sform->display();
         break;
-
 
         /**
          * Lauch the export
@@ -252,7 +245,6 @@ switch ($op) {
         }
         break;
 
-
         /**
          * Delete the exported file
          */
@@ -265,7 +257,6 @@ switch ($op) {
             redirect_header('index.php', 2, _AM_MYSEARCH_DELETED_PB);
         }
         break;
-
 
         /**
          * Blacklist manager
@@ -310,7 +301,6 @@ switch ($op) {
         $sform->display();
         break;
 
-
         /**
          * Add a word in the blacklist
          */
@@ -328,7 +318,6 @@ switch ($op) {
         }
         redirect_header('index.php?op=stats', 2, _AM_MYSEARCH_DBUPDATED);
         break;
-
 
         /**
          * Actions on the blacklist (add or remove keyword(s))
@@ -357,7 +346,6 @@ switch ($op) {
         }
         redirect_header('index.php?op=blacklist', 2, _AM_MYSEARCH_DBUPDATED);
         break;
-
 
         /**
          * Remove content based on the IP
@@ -473,7 +461,6 @@ switch ($op) {
         }
         echo "<tr><form method='post' action='index.php'><th align='center'>"._AM_MYSEARCH_FILTER_BY."</th><th align='center'><input type='text' name='s_keyword' value='".$s_keyword."' size='10' /></th><th align='center'></th><th align='center'><input type='text' name='s_uid' value='".$s_uid."' size='10' /></th><th align='center'><input type='text' name='s_ip' value='".$s_ip."' size='10' /></th><th align='center'><input type='submit' name='btngo_filter' value='"._GO."' /></th></form></tr>";
         echo "</table><div align='right'>".$pagenav->renderNav().'</div></div><br />';
-
 
         // Most searched words ********************************************************************************************************************************
         $start = 0;

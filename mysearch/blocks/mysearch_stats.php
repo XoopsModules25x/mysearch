@@ -41,6 +41,6 @@ function b_mysearch_stats_show()
             $block['mostsearched'][]=array('keyword'=>$datas['keyword'],'count'=>$datas['count']);
         }
     }
+
     return $block;
 }
-?>

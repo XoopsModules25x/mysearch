@@ -85,5 +85,5 @@ $search_form->addElement(new XoopsFormHidden("action", "results"));
 $search_form->addElement(new XoopsFormHiddenToken('id'));
 $search_form->addElement(new XoopsFormButton("", "submit", _MA_MYSEARCH_SEARCH, "submit"));
 
-return $search_form->render();	// Added by Lankford on 2007/7/26.
-?>
+return $search_form->render();    // Added by Lankford on 2007/7/26.
+;

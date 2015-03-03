@@ -52,6 +52,6 @@ function b_mysearch_last_search_show()
             unset($search);
         }
     }
+
     return $block;
 }
-?>

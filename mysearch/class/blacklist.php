@@ -25,7 +25,7 @@
 //  ------------------------------------------------------------------------ //
 class mysearch_blacklist
 {
-    var $keywords;	// Holds keywords
+    var $keywords;    // Holds keywords
 
     /**
      * Get all the kywords
@@ -46,6 +46,7 @@ class mysearch_blacklist
         }
         asort($ret);
         $this->keywords=$ret;
+
         return $ret;
     }
 
@@ -102,9 +103,9 @@ class mysearch_blacklist
             }
             if($add) $ret[]=$onekeyword;
         }
+
         return $ret;
     }
-
 
     /**
      * Save keywords
@@ -126,4 +127,3 @@ class mysearch_blacklist
         fclose($fd);
     }
 }
-?>

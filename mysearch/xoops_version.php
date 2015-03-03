@@ -54,8 +54,6 @@ $modversion['min_xoops']='2.5';
 $modversion['min_admin']='1.1';
 $modversion['min_db']= array('mysql'=>'5.0.7', 'mysqli'=>'5.0.7');
 
-
-
 //About
 $modversion['developer_website_url'] = "http://www.xuups.com";
 $modversion['developer_website_name'] = "Xuups";
@@ -69,7 +67,6 @@ $modversion['people']['developers'][] = "Marco(xoops.instant-zero.com)";
 $modversion['people']['developers'][] = "Lankford(lankfordfamily.com)";
 $modversion['people']['developers'][] = "Smart2(s-martinez.com)";
 $modversion['people']['developers'][] = "Trabis(xuups.com)";
-
 
 $modversion['people']['testers'][] = "";
 
@@ -103,7 +100,6 @@ $modversion['templates'][1]['description'] = '';
 $modversion['templates'][2]['file'] = 'mysearch_search.html';
 $modversion['templates'][2]['description'] = '';
 
-
 // Blocks
 $modversion['blocks'][1]['file'] = "mysearch_last_search.php";
 $modversion['blocks'][1]['name'] = _MI_MYSEARCH_BNAME1;
@@ -134,7 +130,6 @@ $modversion['hasMain'] = 1;
 
 // Comments
 $modversion['hasComments'] = 0;
-
 
 /**
  * Show last searches on the module's index page ?
@@ -206,4 +201,3 @@ $modversion['config'][$i]['default'] = 10;
 
 // Notifications
 $modversion['hasNotification'] = 0;
-?>

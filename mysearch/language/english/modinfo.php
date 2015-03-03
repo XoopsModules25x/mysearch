@@ -27,7 +27,6 @@
 define('_MI_MYSEARCH_NAME',"My search");
 define('_MI_MYSEARCH_DESC',"With this module you can learn what people are searching for on your website.");
 
-
 define('_MI_MYSEARCH_ADMMENU1',"Statistics");
 define('_MI_MYSEARCH_ADMMENU2',"Prune");
 define('_MI_MYSEARCH_ADMMENU3',"Export");
@@ -60,5 +59,3 @@ define('_MI_MYSEARCH_MIN_SEARCH','Minimum keyword length');
 define('_MI_MYSEARCH_MIN_SEARCH_DSC','Enter the minimum keyword length that users are required to enter to perform search');
 
 define('_MI_MYSEARCH_ADMIN0',"Home");
-
-?>

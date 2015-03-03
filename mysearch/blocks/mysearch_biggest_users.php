@@ -43,6 +43,6 @@ function b_mysearch_big_user_show()
             $block['biggesusers'][]=array('uid'=>$oneuser,'uname'=>$tmpmysearch->uname($oneuser),'count'=>$onecount);
         }
     }
+
     return $block;
 }
-?>

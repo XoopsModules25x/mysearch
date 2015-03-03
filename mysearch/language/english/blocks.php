@@ -26,4 +26,3 @@
 define('_MB_MYSEARCH_SEARCH','Search');
 define('_MB_MYSEARCH_ADVS','Advanced Search');
 define('_MB_MYSEARCH_AJAX_WORKING','Working...');
-?>
