@@ -47,9 +47,9 @@ if (file_exists(XOOPS_ROOT_PATH . '/modules/mysearch/language/' . $xoopsConfig['
  */
 if ($xoopsModuleConfig['enable_deep_search'] == 1) {
     $xoopsOption['template_main'] = 'mysearch_search_deep.html';
-    $search_limiter = 0;	// Do not limit search results.
+    $search_limiter = 0;    // Do not limit search results.
 } else {
-    $search_limiter = $xoopsModuleConfig['num_shallow_search'];	// Limit the number of search results based on user preference.
+    $search_limiter = $xoopsModuleConfig['num_shallow_search'];    // Limit the number of search results based on user preference.
 }
 $xoopsOption['template_main'] = 'mysearch_search.html';
 
@@ -243,8 +243,8 @@ switch ($action) {
                     }
 
                     $all_results[$module->getVar('name')] = array("search_more_title" => _MA_MYSEARCH_SHOWALLR,
-	                                                            "search_more_url" => $myts->htmlspecialchars($search_url),
-	                                                            "results" => array_slice($results, 0, $num_show_this_page));
+                                                                "search_more_url" => $myts->htmlspecialchars($search_url),
+                                                                "results" => array_slice($results, 0, $num_show_this_page));
                 }
             }
             unset($results);
@@ -313,4 +313,3 @@ $search_form = include 'include/searchform.php';
 $xoopsTpl->assign('search_form', $search_form);
 
 include XOOPS_ROOT_PATH . '/footer.php';
-?>

@@ -19,4 +19,3 @@ if (isset($_POST["query"])){
         echo '</ul>';
     }
 }
-?>

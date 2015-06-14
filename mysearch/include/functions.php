@@ -56,6 +56,7 @@ function mysearch_getmoduleoption($option, $repmodule='mysearch')
         }
     }
     $tbloptions[$option]=$retval;
+
     return $retval;
 }
 
@@ -78,6 +79,7 @@ function mysearch_FieldExists($fieldname,$table)
 {
     global $xoopsDB;
     $result=$xoopsDB->queryF("SHOW COLUMNS FROM	$table LIKE '$fieldname'");
+
     return($xoopsDB->getRowsNum($result) > 0);
 }
 
@@ -92,6 +94,7 @@ function mysearch_AddField($field, $table)
 {
     global $xoopsDB;
     $result=$xoopsDB->queryF("ALTER TABLE " . $table . " ADD $field;");
+
     return $result;
 }
 
@@ -113,10 +116,10 @@ function mysearch_search($queryarray, $andor, $limit, $offset, $userid){
     }
 
     $blacklist = new mysearch_blacklist();
-    $blacklist->getAllKeywords();	// Load keywords from blacklist
+    $blacklist->getAllKeywords();    // Load keywords from blacklist
     $queryarray = $blacklist->remove_blacklisted($queryarray);
     $count= count($queryarray);
-    if (count(array_intersect($groups,$banned)) == 0 && $userid==0) {	// If it's not a banned user and if we are not viewing someone's profile
+    if (count(array_intersect($groups,$banned)) == 0 && $userid==0) {    // If it's not a banned user and if we are not viewing someone's profile
         if (is_array($queryarray) && $count >0) {
             for($i=0;$i<$count;$i++) {
                 $mysearch = $mysearch_handler->create(true);
@@ -127,7 +130,6 @@ function mysearch_search($queryarray, $andor, $limit, $offset, $userid){
             }
         }
     }
+
     return '';
 }
-
-?>

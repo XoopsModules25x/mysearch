@@ -81,8 +81,6 @@ function mysearch_adminmenu($currentoption = 0, $breadcrumb = '')
     echo "<br /><br /><pre>&nbsp;</pre><pre>&nbsp;</pre><br />";
 }
 
-
-
 function mysearch_collapsableBar($tablename = '', $iconname = '')
 {
 

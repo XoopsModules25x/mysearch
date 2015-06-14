@@ -25,6 +25,6 @@ function b_mysearch_ajaxsearch_show()
     $block = array();
     $block['lang_search'] = _MB_MYSEARCH_SEARCH;
     $block['lang_advsearch'] = _MB_MYSEARCH_ADVS;
+
     return $block;
 }
-?>
