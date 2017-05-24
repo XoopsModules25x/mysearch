@@ -130,7 +130,7 @@ if ( $andor != "OR" && $andor != "exact" && $andor != "AND" ) {
 }
 $xoopsTpl->assign("search_type", $andor);
 
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 if ($action != 'showallbyuser') {
     if ( $andor != "exact" ) {
@@ -184,7 +184,7 @@ switch ($action) {
         $criteria = new CriteriaCompo(new Criteria('hassearch', 1));
         $criteria->add(new Criteria('isactive', 1));
         $criteria->add(new Criteria('mid', "(".implode(',', $available_modules).")", 'IN'));
-        $modules =& $module_handler->getObjects($criteria, true);
+        $modules = $module_handler->getObjects($criteria, true);
         $mids = isset($_REQUEST['mids']) ? $_REQUEST['mids'] : array();
         if (empty($mids) || !is_array($mids)) {
             unset($mids);
