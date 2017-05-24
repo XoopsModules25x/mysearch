@@ -53,7 +53,7 @@ if(isset($_POST['op'])) {
     $op = $_GET['op'];
 }
 $mysearch_handler =& xoops_getmodulehandler('searches', 'mysearch');
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 switch ($op) {
     /**

@@ -284,7 +284,7 @@ class MysearchSearchesHandler extends XoopsObjectHandler
      */
     function getMostSearched($start, $limit, $id_as_key = false)
     {
-        $ts =& MyTextSanitizer::getInstance();
+        $ts = MyTextSanitizer::getInstance();
         $ret = array();
         $sql = "SELECT Count(keyword) AS cpt, keyword, mysearchid FROM ".$this->db->prefix('mysearch_searches').' GROUP BY keyword ORDER BY cpt desc';
         $result = $this->db->query($sql, $limit, $start);
@@ -300,7 +300,7 @@ class MysearchSearchesHandler extends XoopsObjectHandler
      */
     function ajaxMostSearched($start, $limit, $searchword)
     {
-        $ts =& MyTextSanitizer::getInstance();
+        $ts = MyTextSanitizer::getInstance();
         $ret = array();
         $sql = "SELECT Count(keyword) AS cpt, keyword FROM ".$this->db->prefix('mysearch_searches').' WHERE keyword LIKE \''.$searchword.'%\' GROUP BY keyword ORDER BY cpt desc';
         $result = $this->db->query($sql, $limit, $start);

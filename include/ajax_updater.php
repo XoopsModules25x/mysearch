@@ -2,7 +2,7 @@
 include "../../../mainfile.php";
 error_reporting(0);
 $xoopsLogger->activated = false;
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 $mysearch_handler = xoops_getmodulehandler('searches', 'mysearch');
 if (isset($_POST["query"])){
     $query = $myts->addSlashes(utf8_decode($_POST["query"]));
